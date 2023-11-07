@@ -35,7 +35,7 @@ export default function NewReport() {
     hash: ""
   });
 
-  
+  const publicKeyBase58 = process.env.NEXT_PUBLIC_PUBLIC_KEY;
   const [displayText, setDisplayText] = useState("");
   const [transactionlink, setTransactionLink] = useState("");
   let [form1output, setForm1output] = useState("")
@@ -69,7 +69,7 @@ export default function NewReport() {
           return;
         }
 
-        const publicKeyBase58: string = process.env.NEXT_PUBLIC_PUBLIC_KEY || 'B62qq3JDJSrC1VZZEepRzZ9USAPo5wxEWbZZhQEptZBD8NJyaY1HtgD-public-key';       
+        const publicKeyBase58: string = process.env.NEXT_PUBLIC_PUBLIC_KEY || 'B62qq3JDJSrC1VZZEepRzZ9USAPo5wxEWbZZhQEptZBD8NJyaY1HtgD';       
         const publicKey = PublicKey.fromBase58(publicKeyBase58);
         console.log('public key: ', publicKey.toBase58());
 
